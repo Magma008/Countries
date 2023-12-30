@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+/* ------------------------------- */
+
+.dark {
+
+    --bgColor: #202c37;
+    --bckgColor: #2b3945;
+    --bg: #2b3945;
+    min-height: 100vh;
+    --fontColor: hsl(0, 0%, 98%);
+    background-color: var(--bckgColor);
+    color: var(--fontColor);
+
+    --dropBg: rgb(129, 129, 129);
+    --dropText: rgb(60, 60, 60);
+}
+
+body {
+    --bgColor: #fafafa;
+    --bg: white;
+    min-height: 100vh;
+    --fontColor: #111522;
+    --dropBg: rgb(208, 208, 208);
+    --dropText: rgb(255, 255, 255);
+    transition: all .3s linear;
+}
+/* ------------------------------------------- */
+/* Module Page */
+
+.module {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60%;
+}
+
+.rightModule {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    word-break: break-all;
+}
+
+.moduleTitle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.innerRght {
+    display: flex; 
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.modulePage {
+    position: fixed;
+    background: var(--bg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: var(--bg);
+    padding: 30px;
+}
+
+.leftModule {
+    width: 40%;
+    aspect-ratio: 4/2;
+}
+
+.leftModule img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+}
+
+.str {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.btnBox {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
+
+.moduleText {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.back {
+    background: var(--bgColor);
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    color: var(--fontColor);
+}
+
+/* ------------------------------------- */
+/* Top Part */
+
+.container {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    transition: all .3s linear;
+}
+
+.container:nth-child(1) {
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    display: flex;
+    justify-content: space-between;
+    background: var(--bgColor);
+    color: var(--fontColor);
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.mode {
+    fill: var(--fontColor);
+    transition: all .3s linear;
+
+}
+
+.nobg {
+    background: none;
+    fill: var(--fontColor);
+    outline: none;
+    border: none;
+    cursor: pointer;
+} 
+/* --------------------- */
+/* Middle Part */
+
+.searchBar {
+    background: var(--bgColor);
+    color: var(--fontColor);
+    display: flex;
+    fill: var(--fontColor);
+    justify-content: space-between;
+    align-items: center;
+    min-width: 280px;
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    border-radius: 4px; 
+    transition: all .3s linear;   
+}
+
+.searchBar input{
+    transition: all .3s linear;   
+    background: var(--bgColor);
+    color: var(--fontColor);
+    outline: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    min-width: 90%;
+    border: none;
+}
+
+.middle {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+}
+
+.dropIcon {
+    transition: all .3s linear;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.dropDown {
+    position: relative;
+    background: var(--bgColor);
+    color: var(--fontColor);
+    transition: all .3s linear;
+}
+
+.drop {
+    position: absolute;
+    background: var(--bgColor);
+    color: var(--fontColor);
+    width: 100%;
+    height: 0;
+    top: 4rem;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    border-radius: 4px;
+    transition: all .3s linear;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+.drop p {
+    cursor: pointer;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    padding: 0px 10px
+}
+
+.drop p:hover {
+    background: var(--dropBg);
+    color: var(--dropText);
+    padding-left: 15px;
+    padding-right: 0px;
+}
+
+.open {
+    height: 170px;
+    padding: 10px 0px;
+}
+
+
+.dropMain {
+    display: flex;
+    min-width: 180px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    position: relative;
+    border-radius: 4px;
+}
+
+.dropMain h3 {
+    font-weight: 400;
+}
+
+/* --------------------------------------------------- */
+/* Country Cards */
+
+.countryCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.card-img {
+    aspect-ratio: 4/2;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 10px;
+}
+
+.card {
+    background: var(--bgColor);
+    box-shadow: 0px 0px 5px rgb(110, 110, 110);
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.ctName {
+    margin-bottom: 10px;
+}
+/* ------------------------------------------ */
+
+@media screen and (max-width: 900px) {
+    .rightModule {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .rightModule {
+        width: 60%;
+    }
+
+    .module {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .module {
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .leftModule {
+        width: 60%;
+    }
+
+    .rightModule {
+        width: 80%;
+    }
+
+    .module {
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .module {
+        flex-direction: column;
+    }   
+    .middle {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .modulePage {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container:nth-child(1) h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .rightModule {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .container:nth-child(1) h1 {
+        font-size: 20px;
+    }
+
+    .leftModule {
+        width: 80%;
+    }
+
+    .innerRght {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .module {
+        height: 80%;
+    }
+
+    .moduleText {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .innerRightText {
+        text-align: center;
+    }
+    
+    .mode {
+        width: 24px;
+        height: 24px;
+    }
+    .container:nth-child(1) {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .searchBar {
+        min-width: 180px;
+    }
+
+    .filter {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .break {
+        display: none;
+    }
+}
